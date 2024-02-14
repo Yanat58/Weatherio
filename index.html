@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assest/css/styles.css" />
+
+    <title>Weatherio</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="weather-container">
+        <a href="" class="logo">
+          <img src="./assest/image/logo.png" alt="logo" width="364" height="58" />
+        </a>
+
+        <div class="search-view" data-search-view>
+          <div class="search-wrapper">
+            <input
+              type="search"
+              placeholder="search city..."
+              autocomplete="off"
+              class="search-field"
+              data-search-field
+            />
+
+            <span class="m-icon">search</span>
+
+            <button
+              class="icon-btn leading-icon nas-state"
+              aria-label="close search"
+              data-search-toggler
+            >
+              <span class="m-icon">arrow_back</span>
+            </button>
+          </div>
+
+          <div class="search-result">
+            <ul class="viev-list" data-search-list>
+              <li class="view-item">
+                <span class="m-icon">location_on</span>
+
+                <div class="">
+                  <p class="item-title">London</p>
+
+                  <p class="label-2 item-subtitle">State of London, GB</p>
+                </div>
+
+                <a href="#" class="item-link has-state" data-search-toggler=""></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="header-action">
+            <button class="icon-btn has-state" aria-label="open-search" data-search-toggler="">
+              <span class="m-icon">search</span>
+            </button>
+
+            <a href="#/current-locftion" class="btn-primary nas-state" data-current-location-btn></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <script type="module" src="./assest/js/main.js"></script>
+   
+</html>

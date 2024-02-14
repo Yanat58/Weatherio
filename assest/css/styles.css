@@ -1,0 +1,182 @@
+:root {
+    /* colors */
+--primary: #B5A1E5; 
+--on-primary: #100E17; 
+--background: #131214;
+--on-background: #EAE6F2;
+--surface: #1D1C1F;
+--on-surface: #DDDAE5;
+--on-surface-variant: #7B7980; 
+--on-surface-variant-2: #B9B6BF;
+--outline: #3E3D40;
+--bg-aqi-1: #89E589;
+--on-bg-aqi-1: #1F331F;
+--bg-aqi-2: #E5DD89;
+--on-bg-aqi-2: #33311F;
+--bg-aqi-3: #E5C089;
+--on-bg-aqi-3: #332B1F;
+--bg-aqi-4: #E58989;
+--on-bg-aqi-4: #331F1F;
+--bg-aqi-5: #E589B7;
+--on-bg-aqi-5: #331F29;
+--white: hsl(0, 0%, 100%);
+--white-alpha-4: hsla(0, 0%, 100%, 0.04);
+--white-alpha-8: hsla(0, 0%, 100%, 0.08);
+--black-alpha-10: hsla(0, 0%, 0%, 0.1);
+
+/* gradient color */
+--gradient-1: linear-gradient(180deg, hsla(270, 5%, 7%, 0) 0%, hsla(270, 5%, 7%, 0.8) 65%, hsl(270, 5%, 7%) 100%);
+--gradient-2: linear-gradient(180deg, hsla(260, 5%, 12%, 0) 0%, hsla(260, 5%, 12%, 0.8) 65%, hsl(260, 5%, 12%) 100%);
+
+/* font */
+--ff-nunito-sans: 'Nunito Sans', sans-serif;
+
+--heading: 5.6rem;
+--title-1: 2rem;
+--title-2: 1.8rem;
+--title-3: 1.6rem;
+--body-1: 2.2rem;
+--body-2: 2rem;
+--body-3: 1.6rem;
+--label-1: 1.4rem;
+--label-2: 1.2rem;
+
+--weight-regular: 400;
+--weight-semiBold: 600;
+
+/* shadow */
+--shadow-1: 0px 1px 3px hsla(0, 0%, 0%, 0.5);
+--shadow-2: 0px 3px 6px hsla(0, 0%, 0%, 0.4);
+
+/* border radius */
+--radius-28: 28px;
+--radius-16: 16px;
+--radius-pill: 500px;
+--radius-circle: 50%;
+
+/* transition */
+--transition-short: 100ms ease;
+
+}
+
+/* Reset */
+html{
+    font-family: var(--ff-nunito-sans);
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #131214;
+    color: var(--on-background);
+    font-size: var(--body-3);
+    overflow: hidden;
+    
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    height: auto;
+}
+
+
+span{
+    display: block;
+}
+
+input,
+button{
+    display: block;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+input{
+    width: 100%;
+}
+
+button{
+    cursor: pointer;
+}
+
+ sub{
+    vertical-align: baseline;
+ }
+
+ sup{
+    vertical-align: top;
+ }
+
+ sub,
+ sup{
+    font-size: 0.75em;
+ }
+
+ 
+:focus-visible{
+    outline: 2px solid var(--white);
+}
+
+::selection{
+background-color: var(--white-alpha-8);
+}
+
+::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;   /*for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--white-alpha-8);
+    border-radius: var(--radius-pill);
+}
+
+
+/* Icon */
+
+@font-face{
+    font-family: 'Material Symbols Rounded';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/material-symbol-rounded.woff2) format('woff2');
+}
+
+.m-icon{
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  height: 1em;
+  width: 1em;
+  overflow: hidden;
+}
+
