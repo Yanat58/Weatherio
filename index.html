@@ -14,7 +14,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="weather-container">
+      <div class="container">
         <a href="" class="logo">
           <img src="./assest/image/logo.png" alt="logo" width="364" height="58" />
         </a>
@@ -69,6 +69,41 @@
           </div>
       </div>
     </header>
-    <script type="module" src="./assest/js/main.js"></script>
+
+    <main>
+      <article class="container">
+        <div class="content-left">
+          <!-- current weather -->
+          <section class="section current-weather" aria-label="current-weather" data-current-weather>
+            <div class="card card-lg current-weather-card">
+              <h2 class="title-2 card-title">Now</h2>
+              <ul class="meta-list">
+                <li class="meta-item">
+                  <span class="m-icon">location_on</span>
+                  <p class="title-3 meta-text">London, GB</p>
+                </li>
+
+                <li class="meta-item">
+                  <span class="m-icon">calendar_today</span>
+                  <p class="title-3 meta-text">Thursday 16, Feb</p>
+                </li>
+                </ul>
+              <div class="wrapper">
+                <p class="heading">25&deg;C</p>
+
+                <img src="./assest/image/weather_icons/01d.png" alt="overcast clouds" class="weather-icon"
+                width="64">
+              </div>
+              <p class="body-3">Overcast Clouds</p>
+
+            </div>
+          </section>
+
+        </div>
+      </article>
+    </main>
+    <script type="module" src="./assest/js/main.js">
+      'https://api.openweathermap.org/data/3.0/onecall?lat=51.5072&lon=0.1276&units=metric&exclude=minutely,alerts&appid=c36508d37286c777e3389fe115f253ab'
+    </script>
    
 </html>
