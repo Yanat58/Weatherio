@@ -425,7 +425,7 @@ sup {
   display: none;
 }
 
-.search-wrapper .leading-icon {
+.search-wrapper .loading-icon {
   position: absolute;
   top: 50%;
   left: 28px;
@@ -467,13 +467,13 @@ sup {
 
 /* Main */
 
-.main {
+main {
   height: calc(100vh- 80px);
   height: calc(100svh-80px); /*for mobile*/
   overflow: hidden;
 }
 
-.article.container {
+.article-container {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -483,19 +483,19 @@ sup {
   overflow-y: overlay;
 }
 
-.article.container::-webkit-scrollbar-thumb {
+.article-container::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
-.article.container:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+.article-container:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
   background-color: var(--white-alpha-8);
 }
 
-.article.container::-webkit-scrollbar-bottom {
+.article-container::-webkit-scrollbar-bottom {
   height: 10px;
 }
 
-.article.container::before {
+.article-container::before {
   content: '';
   position: fixed;
   bottom: 0;
@@ -512,8 +512,37 @@ sup {
 
 /* Current weather */
 
-.current-weather-card .wrapper {
+ .current-wc-wrapper {
   margin-block: 12px;
+  display: flex;
   gap: 8px;
   align-items: center;
+}
+
+ .weather-icon{
+  margin-inline: auto;
+}
+
+ .current-weather-card >.body-3{
+  text-transform: capitalize;
+}
+
+ .meta-list{
+  margin-block-end: 16px;
+  padding-block-end: 16px;
+  border-block-end: 1px solid var(--outline);
+}
+
+ .meta-item{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+ .meta-item:not(:last-child){
+  margin-block-end: 12px;
+}
+
+ .meta-text{
+  color: var(--on-surface-variant);
 }
