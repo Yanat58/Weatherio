@@ -14,12 +14,12 @@
   </head>
   <body>
     <header class="header">
-      <div class="container header-container">
+      <div class="container ">
         <a href="" class="logo">
           <img class="logo-img" src="./assest/image/logo.png" alt="logo" width="364" height="58" />
         </a>
 
-        <div class="search-view" data-search-view>
+        <div class="search-view " data-search-view>
           <div class="search-wrapper">
             <input
               type="search"
@@ -29,10 +29,10 @@
               data-search-field
             />
 
-            <span class="m-icon search-icon">search</span>
+            <span class="m-icon leading-icon">search</span>
 
             <button
-              class="icon-btn search-icon-btn loading-icon has-state"
+              class="icon-btn  leading-icon has-state"
               aria-label="close search"
               data-search-toggler
             >
@@ -40,7 +40,7 @@
             </button>
           </div>
 
-          <div class="search-result">
+          <div class="search-result active">
             <ul class="view-list" data-search-list>
               <li class="view-item">
                 <span class="m-icon">location_on</span>
@@ -51,7 +51,7 @@
                   <p class="label-2 item-subtitle">State of London, GB</p>
                 </div>
 
-                <a href="#" class="view-item-link has-state" data-search-toggler></a>
+                <a href="#" class="view-link has-state" data-search-toggler></a>
               </li>
             </ul>
           </div>
@@ -59,23 +59,24 @@
 
         <div class="header-action">
           <button class="icon-btn has-state" aria-label="open-search" data-search-toggler="">
-            <span class="m-icon">search</span>
+            <span class="m-icon icon">search</span>
           </button>
 
           <a
             href="#/current-locftion"
-            class="btn-primary header-btn-primary has-state"
+            class="btn-primary  has-state"
             data-current-location-btn
+            disable
           >
             <span class="m-icon">my_location</span>
-            <span class="span span-location">Current location</span>
+            <span class="span ">Current location</span>
           </a>
         </div>
       </div>
     </header>
 
     <main>
-      <article class="container article-container">
+      <article class="container">
         <div class="content-left">
           <!-- current weather -->
           <section
@@ -84,8 +85,11 @@
             data-current-weather
           >
             <div class="card card-lg current-weather-card">
+
               <h2 class="title-2 card-title">Now</h2>
+
               <ul class="meta-list">
+
                 <li class="meta-item">
                   <span class="m-icon">location_on</span>
                   <p class="title-3 meta-text">London, GB</p>
@@ -96,18 +100,18 @@
                   <p class="title-3 meta-text">Thursday 16, Feb</p>
                 </li>
               </ul>
-              <div class="current-temperature-day">
+              <div class="wrapper">
                 <p class="heading">25&deg;C</p>
 
                 <img
                   src="./assest/image/weather_icons/01d.png"
                   alt="Overcast clouds"
-                  class="now-weather-icon"
+                  class="weather-icon"
                   width="64"
                   height="64"
                 />
               </div>
-              <p class="body-3 description">Overcast Clouds</p>
+              <p class="body-3 ">Overcast Clouds</p>
             </div>
           </section>
 
@@ -117,12 +121,12 @@
 
             <div class="card card-lg forecast-card">
               <ul>
-                <li class="forecast-item">
+                <li class="card-item">
                   <div class="icon-wrapper">
                     <img
                       src="./assest/image/weather_icons/01n.png"
                       alt="Overcast Clouds"
-                      class="forecast-weather-icon"
+                      class="weather-icon"
                       width="36"
                       height="36"
                     />
@@ -136,12 +140,12 @@
                   <p class="label-1">Friday</p>
                 </li>
 
-                <li class="forecast-item">
+                <li class="card-item">
                   <div class="icon-wrapper">
                     <img
                       src="./assest/image/weather_icons/01n.png"
                       alt="Overcast Clouds"
-                      class="forecast-weather-icon"
+                      class="weather-icon"
                       width="36"
                       height="36"
                     />
@@ -155,12 +159,12 @@
                   <p class="label-1">Friday</p>
                 </li>
 
-                <li class="forecast-item">
+                <li class="card-item">
                   <div class="icon-wrapper">
                     <img
                       src="./assest/image/weather_icons/01n.png"
                       alt="Overcast Clouds"
-                      class="forecast-weather-icon"
+                      class="weather-icon"
                       width="36"
                       height="36"
                     />
@@ -174,12 +178,12 @@
                   <p class="label-1">Friday</p>
                 </li>
 
-                <li class="forecast-item">
+                <li class="card-item">
                   <div class="icon-wrapper">
                     <img
                       src="./assest/image/weather_icons/01n.png"
                       alt="Overcast Clouds"
-                      class="forecast-weather-icon"
+                      class="weather-icon"
                       width="36"
                       height="36"
                     />
@@ -193,12 +197,12 @@
                   <p class="label-1">Friday</p>
                 </li>
 
-                <li class="forecast-item">
+                <li class="card-item">
                   <div class="icon-wrapper">
                     <img
                       src="./assest/image/weather_icons/01n.png"
                       alt="Overcast Clouds"
-                      class="forecast-weather-icon"
+                      class="weather-icon"
                       width="36"
                       height="36"
                     />
@@ -288,7 +292,7 @@
                   <div class="wrapper">
                     <span class="m-icon">humidity_percentage</span>
 
-                    <p class="title-1">35 <sub>%</sub></p>
+                    <p class="title-1">35<sub>%</sub></p>
                   </div>
                 </div>
 
@@ -297,7 +301,7 @@
 
                   <div class="wrapper">
                     <span class="m-icon">airwave</span>
-                    <p class="title-1">1052 <sub>hPa</sub></p>
+                    <p class="title-1">1052<sub>hPa</sub></p>
                   </div>
                 </div>
 
@@ -307,7 +311,7 @@
                   <div class="wrapper">
                     <span class="m-icon">visibility</span>
 
-                    <p class="title-1">10 <sub>km</sub></p>
+                    <p class="title-1">10<sub>km</sub></p>
                   </div>
                 </div>
 
