@@ -204,7 +204,7 @@ sup {font-size: 0.75em;}
   background-color: var(--white-alpha-4);
 }
 
-.has-state:is(:focus, :focus-wisible)::before {
+.has-state:is(:focus, :focus-visible)::before {
   background-color: var(--white-alpha-8);
   animation: ripple 250s ease forwards;
 }
@@ -393,8 +393,8 @@ sup {font-size: 0.75em;}
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 16px;
-  padding-inline: 16px 24px;
+  gap: 18px;
+  padding-inline-end: 24px;
 }
 
 .search-view .view-item :is(.m-icon, .item-subtitle) {
@@ -631,7 +631,7 @@ article.container::before {
 
 .slider-card{ text-align: center;}
 
-.weather-icon{
+.slider-card .weather-icon{
   margin-inline: auto;
   margin-block: 12px;
 }
@@ -781,6 +781,10 @@ align-items: center;
     gap: 8px;
   }
 
+  .highlights-card .card-item {
+    justify-content: flex-start;
+  }
+
   /* hourly forecast */
 
   .slider-conteiner {
@@ -920,6 +924,12 @@ align-items: center;
 
 
 @media screen and (min-width: 1400px){
+
+  .title-1 {--title-1: 30px;}
   
   .highlights-list { grid-template-columns: repeat(4, 1fr);}
+
+  .highlights-card .m-icon {font-size: 36px;}
+  
+  
 }
