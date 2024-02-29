@@ -401,7 +401,7 @@ sup {font-size: 0.75em;}
   color: var(--on-surface-variant);
 }
 
-.search-view .view-item .view-link {
+.search-view .view-item .item-link {
   position: absolute;
   inset: 0;
   box-shadow: none;

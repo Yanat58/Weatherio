@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./assest/css/styles.css" />
 
     <title>Weatherio</title>
+
+    
   </head>
   <body>
     <header class="header">
@@ -40,25 +42,11 @@
             </button>
           </div>
 
-          <div class="search-result">
-            <ul class="view-list" data-search-list>
-              <li class="view-item">
-                <span class="m-icon">location_on</span>
-
-                <div >
-                  <p class="item-title">London</p>
-
-                  <p class="label-2 item-subtitle">State of London, GB</p>
-                </div>
-
-                <a href="#" class="view-link has-state" data-search-toggler></a>
-              </li>
-            </ul>
-          </div>
+          <div class="search-result" data-search-result></div>
         </div>
 
         <div class="header-action">
-          <button class="icon-btn has-state" aria-label="open-search" data-search-toggler="">
+          <button class="icon-btn has-state" aria-label="open-search" data-search-toggler>
             <span class="m-icon icon">search</span>
           </button>
 
@@ -1206,8 +1194,11 @@
       </a>
     </section>
 
-    <script type="module" src="./assest/js/main.js">
-      'https://api.openweathermap.org/data/3.0/onecall?lat=51.5072&lon=0.1276&units=metric&exclude=minutely,alerts&appid=c36508d37286c777e3389fe115f253ab'
-    </script>
+    <script type="module" src="./assest/js/api.js"></script>
+    <script type="module" src="./assest/js/route.js"></script>
+    <script type="module" src="./assest/js/app.js"></script>
+    <script type="module" src="./assest/js/module.js"></script>
+      
   </body>
+  // 'https://api.openweathermap.org/data/3.0/onecall?lat=51.5072&lon=0.1276&units=metric&exclude=minutely,alerts&appid=c36508d37286c777e3389fe115f253ab'
 </html>
