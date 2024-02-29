@@ -80,4 +80,51 @@ searchField.addEventListener('input', function () {
       });
     }, searchTimeoutDuration)
   }
-})
+});
+
+const container = document.querySelector('[data-container');
+const loading = document.querySelector("[data-loading]");
+const currentLocationBtn = document.querySelector('[data-current-location-btn]');
+
+
+/**
+ * 
+ * @param {number} lat 
+ * @param {number} lon 
+ */
+export const updateWeather = function (lat, lon) {
+  loading.style.display = "grid";
+  container.style.overflowY = "hidden";
+  container.classList.contains("fade-in") ?? container.classList.remove("fade-in");
+  errorContent.style.display = "none";
+
+  const currentWeatherSection = document.querySelector('[data-current-weather]');
+  const highlightSection = document.querySelector('[data-highlights]');
+  const hourleSection = document.querySelector("[data-hourly-forecast]");
+  const forecastSection = document.querySelector('[data-5-day-forecast]');
+
+  currentWeatherSection.innerHTML = "";
+  highlightSection.innerHTML = "";
+  hourleSection.innerHTML = "";
+  forecastSection.innerHTML = "";
+
+  if (window.location.hash === '#/current-location') {
+    currentLocationBtn.setAttribute("disabled", "");
+  } else {
+    currentLocationBtn.removeAttribute("disabled")
+  }
+
+  // Current  weather section
+  fetchData(url.currentWeather(lat, lon), function (currentWeather) {
+    const {
+      weather,
+      dt: dateUnix,
+      sys: { sunrise: sunriseUnixUTC, sunset: sunsetUnixUTC },
+      main: { temp, feel_like, pressure, humidity },
+      visiblity,
+      timezone
+    } = currentWeather;
+
+    const [{ description, icon }] = weather;
+  })
+}
