@@ -285,6 +285,13 @@ sup {font-size: 0.75em;}
 
 .label-2 { font-size: var(--label-2);}
 
+.fade-in { animation:  fade-in 1000ms ease forwards;}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 /* Header */
 
 .header .btn-primary .span { display: none;}
@@ -456,7 +463,7 @@ article.container::before {
 /* Current weather */
 
  .current-weather-card .wrapper {
-  margin-block: 12px;
+  /* margin-block: 12px; */
   display: flex;
   gap: 8px;
   align-items: center;
@@ -467,7 +474,7 @@ article.container::before {
  .current-weather-card .body-3{ text-transform: capitalize;}
 
  .current-weather-card .meta-list{
-  margin-block-end: 16px;
+  /* margin-block-end: 16px; */
   padding-block-end: 16px;
   border-block-end: 1px solid var(--outline);
 }
@@ -495,9 +502,9 @@ article.container::before {
   align-items: center;
 }
 
-.forecast-card .card-item:not(:last-child){
+/* .forecast-card .card-item:not(:last-child){
   margin-block-end: 12px;
-}
+} */
 
 .forecast-card .icon-wrapper{ gap: 8px;}
 
