@@ -13,21 +13,20 @@ const addEventOnElements = function (elements, eventType, callback) {
   for (let element of elements) {
     element.addEventListener(eventType, callback);
   }
-  
 };
 
 //toggle search in mobile
 
-const searchView = document.getElementById("data-search-view");
+const searchView = document.getElementById('data-search-view');
 
 const searchTogglers = document.querySelectorAll('[data-search-toggler]');
 
 const toggleSearch = () => searchView.classList.toggle('active');
 addEventOnElements(searchTogglers, 'click', toggleSearch);
 
-
 //search integration
 
+const searchClose = document.querySelector('[data-search-close');
 const searchField = document.getElementById('data-search-field');
 const searchResult = document.querySelector('[data-search-result]');
 
@@ -38,18 +37,19 @@ searchField.addEventListener('input', function () {
   searchTimeout ?? clearTimeout(searchTimeout);
 
   if (!searchField.value) {
-    searchResult.classList.remove("active");
-    searchResult.innerHTML = "";
-    searchField.classList.remove("searching");
+    searchResult.classList.remove('active');
+    searchResult.innerHTML = '';
+    searchField.classList.remove('searching');
   } else {
-    searchField.classList.add("searching")
+    searchField.classList.add('searching');
   }
 
   if (searchField.value) {
     searchTimeout = setTimeout(() => {
       fetchData(url.geo(searchField.value), function (locations) {
-        searchField.classList.remove("searching");
-        searchResult.classList.add("active");
+        searchField.classList.remove('searching');
+        searchClose.classList.add('active');
+        searchResult.classList.add('active');
         searchResult.innerHTML = `
          <ul class="view-list" data-search-list></ul>
         `;
@@ -58,7 +58,7 @@ searchField.addEventListener('input', function () {
 
         for (const { name, lat, lon, country, state } of locations) {
           const searchItem = document.createElement('li');
-          searchItem.classList.add("view-item");
+          searchItem.classList.add('view-item');
 
           searchItem.innerHTML = `
             <span class="m-icon">location_on</span>
@@ -77,45 +77,48 @@ searchField.addEventListener('input', function () {
           items.push(searchItem.querySelector('[data-search-toggler]'));
         }
 
-        addEventOnElements(items, "click", function () {
+        addEventOnElements(items, 'click', function () {
           toggleSearch();
-          searchResult.classList.remove("active");
-        })
+          searchResult.classList.remove('active');
+        });
 
+        searchClose.addEventListener('click', function () {
+          searchField.value = '';
+          searchResult.innerHTML = '';
+          searchClose.classList.remove('active');
+        });
       });
-    }, searchTimeoutDuration)
+    }, searchTimeoutDuration);
   }
 });
 
 const container = document.querySelector('[data-container');
-const loading = document.querySelector("[data-loading]");
+const loading = document.querySelector('[data-loading]');
 const currentLocationBtn = document.querySelector('[data-current-location-btn]');
 const errorContent = document.querySelector('[data-error-content]');
 
-
 /**
- * 
- * @param {number} lat 
- * @param {number} lon 
+ *
+ * @param {number} lat
+ * @param {number} lon
  */
 export const updateWeather = function (lat, lon) {
-  
-  errorContent.style.display = "none";
+  errorContent.style.display = 'none';
 
   const currentWeatherSection = document.querySelector('[data-current-weather]');
   const highlightSection = document.querySelector('[data-highlights]');
-  const hourlySection = document.querySelector("[data-hourly-forecast]");
+  const hourlySection = document.querySelector('[data-hourly-forecast]');
   const forecastSection = document.querySelector('[data-5-day-forecast]');
 
-  currentWeatherSection.innerHTML = "";
-  highlightSection.innerHTML = "";
-  hourlySection.innerHTML = "";
-  forecastSection.innerHTML = "";
+  currentWeatherSection.innerHTML = '';
+  highlightSection.innerHTML = '';
+  hourlySection.innerHTML = '';
+  forecastSection.innerHTML = '';
 
   if (window.location.hash === '#/current-location') {
-    currentLocationBtn.setAttribute("disabled", "");
+    currentLocationBtn.setAttribute('disabled', '');
   } else {
-    currentLocationBtn.removeAttribute("disabled")
+    currentLocationBtn.removeAttribute('disabled');
   }
 
   // Current  weather section
@@ -165,12 +168,10 @@ export const updateWeather = function (lat, lon) {
 
     fetchData(url.reverseGeo(lat, lon), function ([{ name, country }]) {
       card.querySelector('[data-location]').innerHTML = `${name}, ${country}`;
-    });   
+    });
 
-      currentWeatherSection.append(card);
+    currentWeatherSection.append(card);
 
-   
-    
     switch (main) {
       case 'Snow':
         card.style.backgroundImage = "url('./assest/image/weather-animations/snow.gif')";
@@ -220,19 +221,19 @@ export const updateWeather = function (lat, lon) {
         card.style.backgroundSize = 'cover';
     }
 
-
     // Todays highlights
 
     fetchData(url.airPollution(lat, lon), function (airPollution) {
+      const [
+        {
+          main: { aqi },
+          components: { no2, o3, so2, pm2_5 },
+        },
+      ] = airPollution.list;
 
-      const [{
-        main: { aqi },
-        components: { no2, o3, so2, pm2_5 },
-      }] = airPollution.list;
+      const card = document.createElement('div');
+      card.classList.add('card', 'card-lg');
 
-      const card = document.createElement("div");
-      card.classList.add("card", "card-lg");
-       
       card.innerHTML = `
        <h2 id="highlights-label" class="title-2">Todays Highlights</h2>
 
@@ -339,7 +340,7 @@ export const updateWeather = function (lat, lon) {
       `;
 
       highlightSection.append(card);
-    })
+    });
 
     // 24h forecast sectioin
 
@@ -477,11 +478,11 @@ export const updateWeather = function (lat, lon) {
         forecastSection.querySelector('[data-forecast-list]').append(li);
       }
 
-      loading.style.display = "none";
-      container.style.overflowY = "overlay";
-       container.classList.add("fade-in");
-    })
+      loading.style.display = 'none';
+      container.style.overflowY = 'overlay';
+      container.classList.add('fade-in');
+    });
   });
-}
+};
 
-export const error404 = () => errorContent.style.display = "flex";
+export const error404 = () => (errorContent.style.display = 'flex');

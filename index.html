@@ -11,12 +11,10 @@
     <link rel="stylesheet" href="./assest/css/styles.css" />
 
     <title>Weatherio</title>
-
-    
   </head>
   <body>
     <header class="header">
-      <div class="container ">
+      <div class="container">
         <a href="" class="logo">
           <img class="logo-img" src="./assest/image/logo.png" alt="logo" width="364" height="58" />
         </a>
@@ -33,8 +31,12 @@
 
             <span class="m-icon leading-icon">search</span>
 
+            <button class="has-state close-btn" aria-label="close" data-search-close>
+              <span class="m-icon">close</span>
+            </button>
+
             <button
-              class="icon-btn  leading-icon has-state"
+              class="icon-btn leading-icon has-state"
               aria-label="close search"
               data-search-toggler
             >
@@ -50,13 +52,9 @@
             <span class="m-icon icon">search</span>
           </button>
 
-          <a
-            href="#/current-location"
-            class="btn-primary  has-state"
-            data-current-location-btn            
-          >
+          <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
             <span class="m-icon">my_location</span>
-            <span class="span ">Current location</span>
+            <span class="span">Current location</span>
           </a>
         </div>
       </div>
@@ -73,13 +71,21 @@
           ></section>
 
           <!-- forecast 5 days -->
-          <section class="section forecast" aria-labelledby="forecast-label" data-5-day-forecast></section>
+          <section
+            class="section forecast"
+            aria-labelledby="forecast-label"
+            data-5-day-forecast
+          ></section>
         </div>
 
         <div class="content-right">
           <!-- highlights -->
 
-          <section class="section highlights" aria-labelledby="highlights-label" data-highlights></section>
+          <section
+            class="section highlights"
+            aria-labelledby="highlights-label"
+            data-highlights
+          ></section>
 
           <!-- hourly forecast -->
 
@@ -89,27 +95,27 @@
             data-hourly-forecast
           ></section>
 
-        <footer class="footer">
-          <p class="body-3">Copyright 2024.</p>
+          <footer class="footer">
+            <p class="body-3">Copyright 2024.</p>
 
-          <p class="body-3">
-            Powered by
-            <a
-              href="https://openweathermap.org/api"
-              title="Free OpenWeather Api"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                src="./assest/image/weather_icons/openweather.png"
-                alt="OpenWeather"
-                width="150"
-                height="30"
-                loading="lazy"
-              />
-            </a>
-          </p>
-        </footer>
+            <p class="body-3">
+              Powered by
+              <a
+                href="https://openweathermap.org/api"
+                title="Free OpenWeather Api"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="./assest/image/weather_icons/openweather.png"
+                  alt="OpenWeather"
+                  width="150"
+                  height="30"
+                  loading="lazy"
+                />
+              </a>
+            </p>
+          </footer>
         </div>
 
         <div class="loading" data-loading></div>
@@ -117,9 +123,8 @@
     </main>
 
     <!-- 404 section -->
-     
-    <section class="error-content" data-error-content>
 
+    <section class="error-content" data-error-content>
       <h2 class="heading">404</h2>
 
       <p class="body-1">Page not found!</p>
@@ -131,8 +136,5 @@
 
     <script type="module" src="./assest/js/route.js"></script>
     <script type="module" src="./assest/js/app.js"></script>
-   
-      
   </body>
-  
 </html>

@@ -2,7 +2,7 @@
 
 import { updateWeather, error404 } from './app.js';
 
-const defaultLocation = '#/weather?lat=52.237049&lon=21.017532'; //Warsaw
+const defaultLocation = '#/weather?lat=50.4500336&lon=30.5241361'; //Kyiv
 
 const currentLocation = function () {
   window.navigator.geolocation.getCurrentPosition(

@@ -14,30 +14,31 @@ export const fetchData = function (URL, callback) {
     .then(data => callback(data));
 }
 
-export const url= {
+export const url = {
   currentWeather(lat, lon) {
-    return `data/2.5/weather?${lat}&${lon}&units=metric`;
+    return `data/2.5/weather?${lat}&${lon}&units=metric&`;
   },
 
   forecast(lat, lon) {
     return `data/2.5/forecast?${lat}&${lon}&units=metric`;
   },
+  // forecast(lat, lon) {
+  //   return `data/3.0/onecall?${lat}&${lon}&units=metric&exclude=minutely,alerts`;
+  // },
 
   airPollution(lat, lon) {
     return `data/2.5/air_pollution?${lat}&${lon}`;
   },
 
- reverseGeo(lat, lon) {
-   return `geo/1.0/reverse?${lat}&${lon}&limit=5`;
+  reverseGeo(lat, lon) {
+    return `geo/1.0/reverse?${lat}&${lon}&limit=5`;
   },
- 
-  
 
- /**
-  * @param {string} query 
-  */
+  /**
+   * @param {string} query
+   */
   geo(query) {
     return `geo/1.0/direct?q=${query}&limit=5`;
   },
-}
+};
 
