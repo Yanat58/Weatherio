@@ -811,7 +811,7 @@ align-items: center;
 
   :root {
     /* font size */
-    --heading: 80px;
+    --heading: 70px;
     --title-2: 20px;
   }
 
@@ -915,7 +915,7 @@ align-items: center;
     gap: 40px;
   }
 
-  .current-weather .weather-icon {width: 80px;}
+  .current-weather .weather-icon {width: 100px;}
 
   .forecast-card .title-2 { --title-2: 22px;}
 

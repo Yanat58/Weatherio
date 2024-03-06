@@ -170,40 +170,55 @@ export const updateWeather = function (lat, lon) {
       currentWeatherSection.append(card);
 
    
-    // switch (main) {
-    //   case 'Snow':
-    //   card.style.backgroundImage =
-    //       "url('../image/weather-animations/snow.gif')";
-    //     break;
+    
+    switch (main) {
+      case 'Snow':
+        card.style.backgroundImage = "url('./assest/image/weather-animations/snow.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+        break;
 
-    //   case 'Fog':
-    //   document.querySelector('[data-current-weather]').style.backgroundImage =
-    //       "url('../image/weather-animations/clouds.gif')"
-    //     break;
+      case 'Atmosphere':
+        card.style.backgroundImage = "url('./assest/image/weather-animations/fog.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+        break;
 
-    //   case 'Clouds':
-    //   card.style.backgroundImage = "url('../image/weather-animations/clouds.gif')";
-    //     break;
+      case 'Clouds':
+        card.style.backgroundImage = "url('./assest/image/weather-animations/clouds.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+        break;
 
-    //   case 'Clear':
-    //   document.querySelector('[data-current-weather]').style.backgroundImage =
-    //     "url('../image/weather-animations/clear.gif')";
-    //     break;
+      case 'Clear':
+        card.style.backgroundImage = "url('./assest/image/weather-animations/clear.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+        break;
 
-    //   case 'Rain':
-    //   document.querySelector('[data-current-weather]').style.backgroundImage =
-    //       "url('../image/weather-animations/rain.gif')";
-    //     break;
+      case 'Rain':
+        card.style.backgroundImage = "url('./assest/image/weather-animations/rain.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+        break;
 
-    //   case 'Thunderstorm':
-    //   document.querySelector('[data-current-weather]').style.backgroundImage =
-    //       "url('../image/weather-animations/thunderstorm.gif')";
-    //     break;
+      case 'Drizzle':
+        card.style.backgroundImage = "url('./assest/image/weather-animations/rain.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+        break;
 
-    //   default:
-    //   document.querySelector('[data-current-weather]').style.backgroundImage =
-    //       "url('../image/weather-animations/clear.gif')";
-    // }
+      case 'Thunderstorm':
+        card.style.backgroundImage = "url('./assest/image/weather-animations/thunderstorm.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+        break;
+
+      default:
+        card.style.backgroundImage = "url('./assest/image/weather-animations/clear.gif')";
+        card.style.backgroundRepeat = 'no-repeat';
+        card.style.backgroundSize = 'cover';
+    }
 
 
     // Todays highlights

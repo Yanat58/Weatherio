@@ -5,7 +5,7 @@ const BASE_URL =`https://api.openweathermap.org/`
 
 /**
  * Fetch data from server
-//  * @param {string}  URL API url
+ * @param {string}  URL API url
  * @param {Function} callback callback
  */
 export const fetchData = function (URL, callback) {
