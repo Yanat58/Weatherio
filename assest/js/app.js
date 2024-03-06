@@ -149,14 +149,14 @@ export const updateWeather = function (lat, lon) {
 
         <li class="meta-item">
           <span class="m-icon">calendar_today</span>
-          <p class="title-3 meta-text">${module.getDate(dateUnix, timezone)}</p>
+          <p class="title-3 ">${module.getDate(dateUnix, timezone)}</p>
         </li>
       </ul>
       <div class="wrapper">
         <p class="heading">${parseInt(temp)}&deg;C</p>
 
         <img
-          src="https://openweathermap.org/img/wn/${icon}@2x.png"
+          src="https://openweathermap.org/img/wn/${icon}.png"
           alt=${description}
           class="weather-icon"
           width="110"
