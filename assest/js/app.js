@@ -132,8 +132,7 @@ export const updateWeather = function (lat, lon) {
       timezone,
     } = currentWeather;
 
-    const [{ description, icon, main }] = weather;
-
+    const [{ description, icon, main }] = weather;    
     const card = document.createElement('div');
     card.classList.add('card', 'card-lg', 'current-weather-card');
 
