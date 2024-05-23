@@ -16,7 +16,7 @@ export const fetchData = function (URL, callback) {
 
 export const url = {
   currentWeather(lat, lon) {
-    return `data/2.5/weather?${lat}&${lon}&units=metric&`;
+    return `data/2.5/weather?${lat}&${lon}&units=metric`;
   },
 
   forecast(lat, lon) {
